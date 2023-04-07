@@ -7,6 +7,8 @@ import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.codepath.asynchttpclient.AsyncHttpClient
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler
@@ -19,17 +21,22 @@ class MainActivity : AppCompatActivity() {
     var animeTitle = ""
     var animeScore = ""
     var randomTopAnime = 0
+    private lateinit var animeList: MutableList<String>
+    private lateinit var rvAnime: RecyclerView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        rvAnime = findViewById(R.id.anime_list)
+        animeList = mutableListOf()
+
         getDogImageURL()
 
-        var button = findViewById<Button>(R.id.petButton)
-        var imageView = findViewById<ImageView>(R.id.petImage)
-        var randInteger = Random.nextInt(2)
+//        var button = findViewById<Button>(R.id.petButton)
+//        var imageView = findViewById<ImageView>(R.id.petImage)
+//        var randInteger = Random.nextInt(2)
 
-        getNextImage(button, imageView, randInteger)
+//        getNextImage(button, imageView, randInteger)
     }
 
 //    private fun getDogImageURL()
@@ -64,23 +71,36 @@ class MainActivity : AppCompatActivity() {
             @SuppressLint("SetTextI18n")
             override fun onSuccess(statusCode: Int, headers: Headers, json: JsonHttpResponseHandler.JSON) {
                 Log.d("Dog", "response successful$json")
-                if (randomTopAnime > 24)
-                {
-                    randomTopAnime = 0
+//                if (randomTopAnime > 24)
+//                {
+//                    randomTopAnime = 0
+//                }
+//                petImageURL = json.jsonObject.getJSONArray("data")
+//                    .getJSONObject(randomTopAnime)
+//                    .getJSONObject("images")
+//                    .getJSONObject("jpg")
+//                    .getString("image_url")
+//                animeTitle = json.jsonObject.getJSONArray("data")
+//                    .getJSONObject(randomTopAnime)
+//                    .getString("title")
+//                animeScore = json.jsonObject.getJSONArray("data")
+//                    .getJSONObject(randomTopAnime)
+//                    .getString("score")
+//                Log.d("petImageURL", "pet image URL set")
+//                randomTopAnime++
+                val animeImageArray = json.jsonObject.getJSONArray("data")
+                for (i in 0 until animeImageArray.length()) {
+                    //animeList.add(animeImageArray.getString(i))
+                    val topAnime = animeImageArray.getJSONObject(i)
+                    val images = topAnime.getJSONObject("images")
+                    val jpg = images.getJSONObject("jpg")
+                    val imageURL = jpg.getString("image_url")
+                    animeList.add(imageURL)
                 }
-                petImageURL = json.jsonObject.getJSONArray("data")
-                    .getJSONObject(randomTopAnime)
-                    .getJSONObject("images")
-                    .getJSONObject("jpg")
-                    .getString("image_url")
-                animeTitle = json.jsonObject.getJSONArray("data")
-                    .getJSONObject(randomTopAnime)
-                    .getString("title")
-                animeScore = json.jsonObject.getJSONArray("data")
-                    .getJSONObject(randomTopAnime)
-                    .getString("score")
-                Log.d("petImageURL", "pet image URL set")
-                randomTopAnime++
+
+                val adapter = AnimeAdapter(animeList)
+                rvAnime.adapter = adapter
+                rvAnime.layoutManager = LinearLayoutManager(this@MainActivity)
             }
 
             override fun onFailure(
@@ -116,28 +136,28 @@ class MainActivity : AppCompatActivity() {
 //        }]
 //    }
 
-    @SuppressLint("SetTextI18n")
-    private fun getNextImage(button: Button, imageView: ImageView, randInteger: Int) {
-
-        button.setOnClickListener {
-            getDogImageURL()
-            Glide.with(this)
-                . load(petImageURL)
-                .fitCenter()
-                .into(imageView)
-            val animeTitleTextField = findViewById<TextView>(R.id.AnimeTitle)
-            animeTitleTextField.setText("Anime Title: " + animeTitle)
-            val animeScoreTextField = findViewById<TextView>(R.id.AnimeScore)
-            if (animeScore != "null")
-            {
-                animeScoreTextField.setText("Anime Score: " + animeScore)
-            }
-
-            else
-            {
-                animeScoreTextField.setText("Anime Score: " + 0)
-            }
-
-        }
-    }
+//    @SuppressLint("SetTextI18n")
+//    private fun getNextImage(button: Button, imageView: ImageView, randInteger: Int) {
+//
+//        button.setOnClickListener {
+//            getDogImageURL()
+//            Glide.with(this)
+//                . load(petImageURL)
+//                .fitCenter()
+//                .into(imageView)
+//            val animeTitleTextField = findViewById<TextView>(R.id.AnimeTitle)
+//            animeTitleTextField.setText("Anime Title: " + animeTitle)
+//            val animeScoreTextField = findViewById<TextView>(R.id.AnimeScore)
+//            if (animeScore != "null")
+//            {
+//                animeScoreTextField.setText("Anime Score: " + animeScore)
+//            }
+//
+//            else
+//            {
+//                animeScoreTextField.setText("Anime Score: " + 0)
+//            }
+//
+//        }
+//    }
 }
