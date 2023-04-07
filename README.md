@@ -8,7 +8,7 @@ Time spent: 5 hours spent in total
 
 ## Summary
 
-Anime Central is an android app that displays the 24 highest rated anime with their name and score currently on My Anime List's website using the jikan Anime API(Example: "An app that displays a scrollable list of characters from the Marvel API")**
+Anime Central is an android app that displays the 24 highest rated anime with their name and score currently on My Anime List's website using the jikan Anime API.
 
 If I had to describe this project in three (3) emojis, they would be: 🤩🔥❤️
 
