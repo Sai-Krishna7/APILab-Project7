@@ -36,6 +36,8 @@ The following EXTRA features are implemented:
 
 Here's a video / GIF that demos all of the app's implemented features:
 
+<img src='https://cdn-useast1.kapwing.com/final_6430d569eec0130020f2ea1c_145368.gif' title='Video Demo' width='' alt='Video Demo' />
+
 Unfortunately, the video is tool large to be displayed as a GIF here, please refer to this link: https://i.imgur.com/LGIhg8y.mp4
 
 GIF created with ScreentoGif
@@ -47,8 +49,7 @@ GIF created with ScreentoGif
 
 ## Notes
 
-Lovely opportunity to understand how Adapters and Recycler Views work. Took to the time to greater understand how API's work and was able to remodel the app based on what I
-wished to accomplish but wasn't able to last week due to time restrictions.
+Lovely opportunity to understand how Adapters and Recycler Views work. Took to the time to greater understand how API's work and was able to remodel the app based on what I wished to accomplish but wasn't able to last week due to time restrictions.
 
 ## License
 
