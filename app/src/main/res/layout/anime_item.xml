@@ -18,8 +18,9 @@
         android:layout_marginLeft="2dp"
         android:layout_marginTop="15dp"
         android:text=""
-        android:textSize="20dp"
-        android:textStyle="bold"
+        android:textAppearance="@style/AppTheme.Dark"
+        android:textColor="@color/spotify_black_dark"
+        android:textSize="20sp"
         app:layout_constraintLeft_toLeftOf="@id/anime_image"
         app:layout_constraintTop_toBottomOf="@id/anime_image" />
 
@@ -30,8 +31,9 @@
         android:layout_marginLeft="2dp"
         android:layout_marginTop="15dp"
         android:text=""
-        android:textSize="20dp"
-        android:textStyle="bold"
+        android:textAppearance="@style/AppTheme.Dark"
+        android:textColor="@color/spotify_black_dark"
+        android:textSize="20sp"
         app:layout_constraintLeft_toLeftOf="@id/anime_image"
         app:layout_constraintTop_toBottomOf="@id/AnimeTitle" />
 
