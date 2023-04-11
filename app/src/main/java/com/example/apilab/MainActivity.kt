@@ -45,7 +45,6 @@ class MainActivity : AppCompatActivity() {
                 Log.d("Dog", "response successful$json")
                 val animeImageArray = json.jsonObject.getJSONArray("data")
                 for (i in 0 until animeImageArray.length()) {
-                    //animeList.add(animeImageArray.getString(i))
                     val topAnime = animeImageArray.getJSONObject(i)
                     val images = topAnime.getJSONObject("images")
                     val jpg = images.getJSONObject("jpg")
