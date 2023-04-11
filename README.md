@@ -1,14 +1,15 @@
 <!-- (This is a comment) INSTRUCTIONS: Go through this page and fill out any **bolded** entries with their correct values.-->
 
-# AND101 Project 6 - CYOAPI Part 2: RecyclerView Edition
+# AND101 Project 7 - CYOAPI Part 3: Beautified
 
 Submitted by: Sai Krishna Deeduvanu
 
-Time spent: 5 hours spent in total
+Time spent: 2 hours spent in total
 
 ## Summary
 
 Anime Central is an android app that displays the 24 highest rated anime with their name and score currently on My Anime List's website using the jikan Anime API.
+Along with custom font, styling and themes.
 
 If I had to describe this project in three (3) emojis, they would be: 🤩🔥❤️
 
@@ -18,27 +19,28 @@ If I had to describe this project in three (3) emojis, they would be: 🤩🔥�
 
 The following REQUIRED features are completed:
 
-- [x] Make an API call to an API of your choice using AsyncHTTPClient
-- [x] Implement a RecyclerView to display a list of entries from the API
-- [x] Display at least three (3) pieces of data for each RecyclerView item
+- [x] App contains a RecyclerView that displays a list of scrollable data
+- [x] App displays at least two (2) pieces of data for each RecyclerView item
+- [x] Use a downloadable font with custom color and size
+- [x] Modify the theme of the app in `themes.xml`
+- [x] Define and apply at least one style in `styles.xml`
 
 The following STRETCH features are implemented:
 
-- [ ] Add a UI element for the user to interact with API further
-- [ ] Show a `Toast` or `Snackbar` when an item is clicked
-- [ ] Add item dividers with `DividerItemDecoration`
+- [ ] Update the night theme to use different versions of styles when in dark mode
+- [ ] Use different drawables when in dark mode
 
 The following EXTRA features are implemented:
 
-- [ ] List anything else that you added to improve the app!
+- [x] Basically added custom roboto downloadable font styling along with shadow effect in a dark mode theme style resource.
 
 ## Video Demo
 
 Here's a video / GIF that demos all of the app's implemented features:
 
-Unfortunately, the video is tool large to be displayed as a GIF here, please refer to this link: https://i.imgur.com/LGIhg8y.mp4
+<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Demo' width='' alt='Video Demo' />
 
-GIF created with ScreentoGif
+GIF created with ScreenToGif
 
 <!-- Recommended tools:
 - [Kap](https://getkap.co/) for macOS
@@ -47,7 +49,7 @@ GIF created with ScreentoGif
 
 ## Notes
 
-Lovely opportunity to understand how Adapters and Recycler Views work. Took to the time to greater understand how API's work and was able to remodel the app based on what I wished to accomplish but wasn't able to last week due to time restrictions.
+Modified the existing Anime Central app to have a dark theme with custom font, colors, and themes.
 
 ## License
 
