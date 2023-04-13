@@ -38,7 +38,7 @@ The following EXTRA features are implemented:
 
 Here's a video / GIF that demos all of the app's implemented features:
 
-Link to video since file too large to display as gif: https://i.imgur.com/09e1ELO.mp4
+Link to video since file too large to display as gif: https://i.imgur.com/TKqfVjj.mp4
 
 GIF created with ScreenToGif
 
